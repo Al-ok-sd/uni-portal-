@@ -1,48 +1,90 @@
-// Placeholder content for the notice board and feature grid.
-// Swap these for real data once the course boards are wired to a backend.
+// =========================================================
+// CLASSBOARD SAMPLE DATA
+// Replace this with real backend/API data later.
+// =========================================================
 
 export const COURSES_PREVIEW = [
   {
+    code: "CSE 211",
+    name: "Data Stucture And Algorithms",
+    cr: "Rafi · CR",
+    time: "2h ago",
+    kind: "Exam",
+    tagClass: "tag-exam",
+    icon: "↗",
+    title: "Mid-term examination updated",
+    note: "Mid-term moved to Sunday, 10:00 AM — Room 412. Bring calculator. No phones allowed.",
+  },
+
+  {
     code: "CSE 3105",
     name: "Database Systems",
-    cr: "Rafi (CR)",
-    time: "2h ago",
-    kind: "Routine",
-    note: "Mid-term moved to Sunday, 10:00 AM — Room 412. Bring calculator, no phones.",
+    cr: "Mahin · CR",
+    time: "Yesterday",
+    kind: "Material",
+    tagClass: "tag-material",
+    icon: "↗",
+    title: "Chapter 6 study materials uploaded",
+    note: "Chapter 6 slides and the ER diagram derivation from yesterday's class are now available.",
   },
+
+  {
+    code: "CSE 3105",
+    name: "Database Systems",
+    cr: "Nusrat · CR",
+    time: "2 days ago",
+    kind: "Announcement",
+    tagClass: "tag-announcement",
+    icon: "!",
+    title: "Next class will start at 11:00 AM",
+    note: "The Thursday class has been shifted to 11:00 AM. Please check the updated routine.",
+  },
+
   {
     code: "EEE 2201",
     name: "Electrical Circuits II",
-    cr: "Mahin (CR)",
-    time: "Yesterday",
-    kind: "Notes",
-    note: "Uploaded Chapter 6 slides + the derivation Sir did on the board today.",
+    cr: "Tanvir · CR",
+    time: "3 days ago",
+    kind: "Assignment",
+    tagClass: "tag-material",
+    icon: "✓",
+    title: "Assignment 02 posted",
+    note: "Assignment 02 is available now. Submission deadline is next Tuesday.",
   },
-  {
-    code: "ENG 1102",
-    name: "Technical Writing",
-    cr: "Nusrat (CR)",
-    time: "2 days ago",
-    kind: "Routine",
-    note: "Class on Thursday is cancelled. Makeup class Saturday, same time.",
-  },
+
+
 ];
+
+// =========================================================
+// FEATURES
+// =========================================================
 
 export const FEATURES = [
   {
-    title: "One feed per course",
-    body: "No more scrolling three years back in a WhatsApp group. Every course has its own board — routine and notes, newest on top.",
+    title: "Course-based information",
+    body: "Every subject gets its own space for updates, notes, materials, announcements, exams and assignments.",
+    icon: "▤",
+    iconClass: "blue",
   },
+
   {
-    title: "CRs post the way they already do",
-    body: "A CR taps a course, writes the update, and it's live. Same speed as a group message, minus the group.",
+    title: "Exam & routine updates",
+    body: "Important exam dates, room changes, routine updates and other academic announcements stay easy to find.",
+    icon: "▣",
+    iconClass: "red",
   },
+
   {
-    title: "Exam routines that don't get lost",
-    body: "Pinned dates, rooms and seat plans stay put — no digging through chat history the night before an exam.",
+    title: "Notes & study materials",
+    body: "Students can find lecture notes, slides, PDFs and other course materials without searching through old messages.",
+    icon: "↗",
+    iconClass: "purple",
   },
+
   {
-    title: "Built around your section",
-    body: "See only the courses you're enrolled in. Nothing from sections or batches that aren't yours.",
+    title: "Section-based access",
+    body: "Students can choose their subject and section so they can access information relevant to their own class.",
+    icon: "◎",
+    iconClass: "orange",
   },
 ];
