@@ -1,0 +1,203 @@
+/* =========================================================
+   COURSE SELECTOR — additions to global.css
+   Depends entirely on the tokens/classes already defined in your
+   global stylesheet: --primary, --primary-light, --navy, --text,
+   --text-soft, --text-light, --white, --background-soft, --border,
+   --radius-md, --radius-lg, --shadow-sm, --shadow-md, --green, --red,
+   --font, .btn, .btn-solid, .btn-ghost, .form-field, .board-course,
+   .board-name.
+
+   Nothing here redefines a color or a font — it only adds the
+   handful of classes those don't already cover: the wrapper, the
+   list of selectable course rows, and the sticky selection tray.
+========================================================= */
+
+.course-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  font-family: var(--font);
+  color: var(--text);
+}
+
+.browse-search {
+  max-width: 420px;
+}
+
+.browse-empty {
+  color: var(--text-soft);
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/* ---- course rows ---- */
+
+.course-select-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.course-select-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  padding: 20px 22px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.course-select-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.course-select-card.is-selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+/* .board-course / .board-name already style the code + course name;
+   this just adds the section/CR line beneath them */
+.course-row-meta {
+  color: var(--text-light);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.course-select-card .btn {
+  flex-shrink: 0;
+}
+
+/* global.css defines .btn but no disabled state */
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ---- sticky live-selection tray ---- */
+
+.selection-tray {
+  position: sticky;
+  bottom: 0;
+  background: var(--background-soft);
+  border-top: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+}
+
+.selection-tray__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.selection-tray__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.selection-tray__empty {
+  color: var(--text-light);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* same pill language as .section-badge, with a remove control */
+.selection-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 6px 6px 10px;
+  border-radius: 20px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.selection-chip button {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(36, 83, 212, 0.15);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.selection-chip button:hover {
+  background: rgba(36, 83, 212, 0.25);
+}
+
+.selection-tray__action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.selection-tray__action .btn {
+  flex-shrink: 0;
+}
+
+.selection-tray__saved {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.selection-tray__error {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 560px) {
+  .course-select-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-select-card .btn {
+    width: 100%;
+  }
+
+  .selection-tray__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .selection-tray__action {
+    justify-content: space-between;
+  }
+}

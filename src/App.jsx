@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./style.css";
 
 import {
@@ -9,10 +10,13 @@ import {
   CtaBand,
   Footer,
   AuthModal,
-} from "./Components/index";
+} from "./Components/hero/index";
+import CourseFinderPage from "./pages/CourseFinderPage";
 
-export default function App() {
+function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authView, setAuthView] = useState(null);
+  const navigate = useNavigate();
 
   /*
     Auth states:
@@ -24,15 +28,8 @@ export default function App() {
     cr-register
   */
 
-  const [authView, setAuthView] = useState(null);
-
   return (
     <div className="site">
-
-      {/* =====================================================
-          NAVBAR
-      ===================================================== */}
-
       <Navbar
         menuOpen={menuOpen}
         onToggleMenu={() => setMenuOpen((v) => !v)}
@@ -40,61 +37,35 @@ export default function App() {
         onRegister={() => setAuthView("cr-register")}
       />
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
       <Hero
-        /*
-          Student clicks "Find my course"
-          → Student Login opens
-        */
-        onFindCourse={() => setAuthView("student-login")}
-
-        /*
-          Hero CR Login button
-          → CR Login opens
-        */
+        onFindCourse={() => navigate("/courses")}
         onLogin={() => setAuthView("cr-login")}
       />
 
-      {/* =====================================================
-          HOW IT WORKS
-      ===================================================== */}
-
       <HowItWorks />
-
-      {/* =====================================================
-          FEATURES
-      ===================================================== */}
-
       <Features />
-
-      {/* =====================================================
-          CR CTA
-      ===================================================== */}
 
       <CtaBand
         onRegister={() => setAuthView("cr-register")}
         onLogin={() => setAuthView("cr-login")}
       />
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
-
       <Footer />
-
-      {/* =====================================================
-          AUTH MODAL
-      ===================================================== */}
 
       <AuthModal
         authView={authView}
         onClose={() => setAuthView(null)}
         onSwitch={setAuthView}
       />
-
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/courses" element={<CourseFinderPage />} />
+    </Routes>
   );
 }
