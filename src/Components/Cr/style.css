@@ -1,0 +1,330 @@
+/* =========================================================
+   CR DASHBOARD
+   Uses the same design tokens as global style.css
+========================================================= */
+
+.cr-dashboard {
+  min-height: 100vh;
+  background: var(--background);
+  font-family: var(--font);
+  color: var(--text);
+}
+
+/* ========== TOP BAR ========== */
+
+.cr-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(14px);
+}
+
+.cr-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cr-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cr-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.cr-user-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+}
+
+.cr-user-role {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* ========== MAIN ========== */
+
+.cr-main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ========== COURSE HEADER ========== */
+
+.cr-course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.cr-course-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  color: var(--navy);
+  margin: 6px 0 12px;
+  letter-spacing: -0.8px;
+}
+
+.cr-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cr-meta-text {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+/* ========== STATS ========== */
+
+.cr-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.cr-stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.cr-stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.cr-stat-label {
+  font-size: 13px;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+/* ========== FORM CARD ========== */
+
+.cr-form-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-md);
+}
+
+.cr-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cr-form-header h2 {
+  font-size: 20px;
+  color: var(--navy);
+}
+
+.cr-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cr-type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cr-type-btn {
+  border: 1px solid var(--border);
+  background: var(--white);
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cr-type-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.cr-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cr-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(36, 83, 212, 0.1);
+}
+
+.cr-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ========== POSTS ========== */
+
+.cr-posts-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.cr-posts-section .board-tabs {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-light);
+  gap: 28px;
+}
+
+.cr-posts-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cr-post-card {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.cr-post-card:last-child {
+  border-bottom: none;
+}
+
+.cr-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--background-soft);
+  color: var(--text-soft);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.cr-post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.cr-post-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-sm {
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+}
+
+.btn-sm.danger {
+  color: var(--red);
+}
+
+.btn-sm.danger:hover {
+  background: var(--red-light);
+  border-color: transparent;
+}
+
+/* Empty state */
+.cr-empty {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+/* Extra tag for assignment */
+.tag-assignment {
+  background: var(--orange-light);
+  color: var(--orange);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .cr-topbar {
+    padding: 0 20px;
+  }
+
+  .cr-course-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cr-course-title {
+    font-size: 26px;
+  }
+
+  .cr-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cr-form-card {
+    padding: 22px;
+  }
+
+  .cr-type-buttons {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cr-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cr-user-name,
+  .cr-user-role {
+    display: none;
+  }
+}

@@ -35,11 +35,7 @@ const courses = [
 export default function CourseFinderPage() {
   return (
     <div className="page-shell" style={{ padding: "24px 20px 60px" }}>
-      <div style={{ marginBottom: "20px" }}>
-        <Link to="/" className="btn btn--ghost">
-          ← Back home
-        </Link>
-      </div>
+      
 
       <CourseSelector
         courses={courses}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import CRDashboard from "./Components/Cr";
 import "./style.css";
 
 import {
@@ -64,8 +65,9 @@ function HomePage() {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/courses" element={<CourseFinderPage />} />
-    </Routes>
+  <Route path="/" element={<HomePage />} />
+  <Route path="/courses" element={<CourseFinderPage />} />
+  <Route path="/cr/dashboard" element={<CRDashboard />} />   {/* ← add this line */}
+</Routes>
   );
 }
